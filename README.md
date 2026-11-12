@@ -32,11 +32,14 @@ Tagged releases on GitHub carry prebuilt binaries for each platform under **Rele
 
 - `OneTimePad-windows.exe` runs directly. SmartScreen may warn because the binary is unsigned; choose **More info**, then **Run anyway**.
 - `OneTimePad-macos.zip` unzips to `OneTimePad.app`. The app is unsigned, so the first launch needs right-click, **Open**.
-- `OneTimePad-linux` needs `chmod +x OneTimePad-linux` before it runs.
+- `OneTimePad-linux` is for 64-bit Intel and AMD PCs. It needs `chmod +x OneTimePad-linux` before it runs.
+- `OneTimePad-linux-arm64` is for 64-bit ARM Linux, including a Raspberry Pi 3, 4, 5, or Zero 2 W running the 64-bit Raspberry Pi OS (Bookworm or newer) with the desktop. It also needs `chmod +x` first.
+
+The Linux builds are made on Ubuntu 22.04, so they run on that release and anything newer. A 32-bit Raspberry Pi OS can't run either binary; use the source instructions below instead.
 
 ### Run from source
 
-Requires Python 3.9 or newer with Tkinter. The python.org installers for Windows and macOS include Tkinter. On Ubuntu or Debian, install it with `sudo apt install python3-tk`.
+Requires Python 3.9 or newer with Tkinter. The python.org installers for Windows and macOS include Tkinter. On Ubuntu or Debian, install it with `sudo apt install python3-tk`. Raspberry Pi OS with the desktop already includes it.
 
 ```
 git clone <this repo>

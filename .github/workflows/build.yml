@@ -16,8 +16,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
+          # 22.04 keeps the glibc floor at 2.35 so the binaries also run on
+          # Raspberry Pi OS Bookworm (2.36) and other older distros.
+          - os: ubuntu-22.04
             asset: OneTimePad-linux
+          - os: ubuntu-22.04-arm
+            asset: OneTimePad-linux-arm64
           - os: windows-latest
             asset: OneTimePad-windows.exe
           - os: macos-latest
